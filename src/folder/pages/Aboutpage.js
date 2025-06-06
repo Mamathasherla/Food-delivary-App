@@ -5,9 +5,6 @@ import Little from '../../components/Littleinfoscreen'
 import CustomerTestimonials from '../../components/CustomerTestimonials'
 import Footer from '../../components/Footerscreen'
 
-
-
-
 const Aboutpage = () => {
     return(
         <div>

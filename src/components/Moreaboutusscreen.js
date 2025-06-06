@@ -4,23 +4,20 @@ import {
   Typography,
   Paper,
   CardMedia,
-  
   Button,
 } from '@mui/material';
 import {
   Phone,
   Email,
- 
   LocationOn,
 } from '@mui/icons-material';
+
+import ImageAsset from '../assets/Image.png'; // Capital "I"
+
 
 const Moreabout = () => {
   return (
     <Box sx={{ backgroundColor: '#f9f9f7' }}>
-        
-        
-
-    
       <Box
         sx={{
           display: 'flex',
@@ -37,7 +34,7 @@ const Moreabout = () => {
         <Box sx={{ position: 'relative', width: 460, minWidth: 320 }}>
           <CardMedia
             component="img"
-            image="/images/image.png"
+            image={ImageAsset}
             alt="Dish"
             sx={{ borderRadius: 3, width: '100%' }}
           />
