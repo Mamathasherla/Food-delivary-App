@@ -4,15 +4,13 @@ import {
   Typography,
   Paper,
   CardMedia,
-  IconButton,
+  
   Button,
 } from '@mui/material';
 import {
   Phone,
   Email,
-  Twitter,
-  Facebook,
-  Instagram,
+ 
   LocationOn,
 } from '@mui/icons-material';
 
@@ -22,7 +20,7 @@ const Moreabout = () => {
         
         
 
-      {/* Main Section with Image + Text */}
+    
       <Box
         sx={{
           display: 'flex',

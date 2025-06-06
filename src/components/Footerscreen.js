@@ -5,7 +5,7 @@ import {
   Grid,
   List,
   ListItem,
-  Avatar,
+ 
   IconButton,
 } from '@mui/material';
 import { styled } from '@mui/system';

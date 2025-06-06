@@ -4,7 +4,7 @@ import {
   AppBar,
   Box,
   Button,
-  Container,
+ 
   Grid,
   MenuItem,
   Select,
@@ -96,9 +96,9 @@ const BookTableWithMap = () => {
     const handleContact = () =>{
       navigate('/Contact')
     }
-    const handleBlog = () =>{
-      navigate('/blog')
-    }
+    // const handleBlog = () =>{
+    //   navigate('/blog')
+    // }
     const handleBlogdetails = () =>{
       navigate('/blogdetails')
     }

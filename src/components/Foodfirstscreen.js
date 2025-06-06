@@ -7,16 +7,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
-  
+
   const handleAbout = () =>{
     navigate('/about')
   }
   const handleContact = () =>{
     navigate('/Contact')
   }
-  const handleBlog = () =>{
-    navigate('/blog')
-  }
+  // const handleBlog = () =>{
+  //   navigate('/blog')
+  // }
   const handleBlogdetails = () =>{
     navigate('/blogdetails')
   }
