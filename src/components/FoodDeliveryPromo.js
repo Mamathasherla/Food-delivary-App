@@ -16,8 +16,7 @@ const FoodDeliveryPromo = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
-        overflow: 'hidden',
+        minHeight: '100vh',
         px: { xs: 2, md: 10 },
         py: 4,
         backgroundColor: '#fdfaf6',
@@ -26,37 +25,51 @@ const FoodDeliveryPromo = () => {
       }}
     >
       <Grid container spacing={4} alignItems="center">
-       
+        {/* Image Section */}
         <Grid item xs={12} md={6}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            {/* Chef image full height */}
+            <Box
+              component="img"
+              src={chef}
+              alt="Chef"
+              sx={{
+                width: '50%',
+                height: { xs: 300, md: 450 },
+                objectFit: 'cover',
+                borderRadius: 2
+              }}
+            />
+
+            {/* Right side stacked images */}
+            <Box sx={{ display: 'flex', flexDirection: 'column', width: '50%', gap: 2 }}>
               <Box
                 component="img"
-                src={chef}
-                alt="Chef"
-                sx={{ width: '100%', height: 'auto', borderRadius: 2 }}
+                src={pan}
+                alt="Pan"
+                sx={{
+                  height: { xs: 140, md: 215 },
+                  objectFit: 'cover',
+                  width: '100%',
+                  borderRadius: 2
+                }}
               />
-            </Grid>
-            <Grid item xs={6}>
-              <Stack spacing={2}>
-                <Box
-                  component="img"
-                  src={pan}
-                  alt="Pan"
-                  sx={{ width: '100%', height: 'auto', borderRadius: 2 }}
-                />
-                <Box
-                  component="img"
-                  src={grills}
-                  alt="Grills"
-                  sx={{ width: '100%', height: 'auto', borderRadius: 2 }}
-                />
-              </Stack>
-            </Grid>
-          </Grid>
+              <Box
+                component="img"
+                src={grills}
+                alt="Grills"
+                sx={{
+                  height: { xs: 140, md: 215 },
+                  objectFit: 'cover',
+                  width: '100%',
+                  borderRadius: 2
+                }}
+              />
+            </Box>
+          </Box>
         </Grid>
 
-        
+        {/* Text Section */}
         <Grid item xs={12} md={6}>
           <Typography
             variant="h4"
@@ -72,7 +85,7 @@ const FoodDeliveryPromo = () => {
             mb={3}
             sx={{ fontSize: { xs: '0.9rem', md: '1rem' } }}
           >
-            Our visual designer lets you quickly add and drag down your way to customers for both desktop and mobile.
+            Our visual designer lets you quickly add and drag down your way to customers for both keep desktop.
           </Typography>
 
           <Stack spacing={1.5}>

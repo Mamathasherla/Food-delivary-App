@@ -30,7 +30,7 @@ const BlogArticles = () => {
   return (
     <Box sx={{ backgroundColor: '#f7f7f9', py: 6 }}>
       <Container maxWidth="lg">
-        {/* Header */}
+       
         <Box
           sx={{
             display: 'flex',
