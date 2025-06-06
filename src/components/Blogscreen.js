@@ -7,21 +7,28 @@ import {
   Container,
 } from '@mui/material';
 
+// Import images from assets
+import MainArticleImg from '../assets/Mask group (4).png';
+import Img1 from '../assets/Mask group (5).png';
+import Img2 from '../assets/Mask group (6).png';
+import Img3 from '../assets/Mask group (7).png';
+import Img4 from '../assets/Mask group (8).png';
+
 const sideArticles = [
   {
-    img: '/images/Mask group (5).png',
+    img: Img1,
     title: 'How to prepare the perfect french fries in an air fryer',
   },
   {
-    img: '/images/Mask group (6).png',
+    img: Img2,
     title: 'How to prepare delicious chicken tenders',
   },
   {
-    img: '/images/Mask group (7).png',
+    img: Img3,
     title: '7 delicious cheesecake recipes you can prepare',
   },
   {
-    img: '/images/Mask group (8).png',
+    img: Img4,
     title: '5 great pizza restaurants you should visit this city',
   },
 ];
@@ -60,9 +67,8 @@ const BlogArticles = () => {
           </Button>
         </Box>
 
-      
         <Box sx={{ display: 'flex', gap: 3, flexDirection: { xs: 'column', md: 'row' } }}>
-         
+          {/* Main Article */}
           <Paper
             elevation={1}
             sx={{
@@ -74,7 +80,7 @@ const BlogArticles = () => {
           >
             <Box
               component="img"
-              src="/images/Mask group (4).png"
+              src={MainArticleImg}
               alt="Burger"
               sx={{
                 width: '100%',
@@ -95,7 +101,7 @@ const BlogArticles = () => {
             </Box>
           </Paper>
 
-        
+          {/* Side Articles */}
           <Box
             sx={{
               flex: 1,
