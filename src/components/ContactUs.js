@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/japanese-food.png'
 import {
   Box,
   Typography,
@@ -113,7 +114,7 @@ const ContactUs = () => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-            <img src="/japanese-food.png" alt="Logo" style={{ width: 32, height: 32 }} />
+            <img  src={logo} alt="Logo" style={{ width: 32, height: 32 }} />
             <Typography variant="h6" sx={{ fontStyle: 'italic', fontWeight: 600, color: '#1f2937' }}>
               Bistro Bliss
             </Typography>
