@@ -14,9 +14,7 @@ const Header = () => {
   const handleContact = () =>{
     navigate('/Contact')
   }
-  // const handleBlog = () =>{
-  //   navigate('/blog')
-  // }
+ 
   const handleBlogdetails = () =>{
     navigate('/blogdetails')
   }

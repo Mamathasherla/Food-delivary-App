@@ -5,6 +5,9 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import SpeedIcon from '@mui/icons-material/Speed';
 
+// ✅ Import local background image
+import BGImage from '../assets/BG.png';
+
 const Authenticscreen = () => {
   return (
     <Box className="Authenticscreen" sx={{ bgcolor: '#f9f9f7', minHeight: '100vh' }}>
@@ -13,7 +16,7 @@ const Authenticscreen = () => {
         sx={{
           position: 'relative',
           height: '70vh',
-          backgroundImage: 'url(/images/BG.png)',
+          backgroundImage: `url(${BGImage})`, // ✅ use imported image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -47,7 +50,6 @@ const Authenticscreen = () => {
         </IconButton>
       </Box>
 
-      
       <Box sx={{ px: 4, py: 6, bgcolor: '#fff' }}>
         <Grid container spacing={6} justifyContent="center">
         
@@ -65,7 +67,6 @@ const Authenticscreen = () => {
             </Box>
           </Grid>
 
-         
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="flex-start" gap={2}>
               <KitchenIcon sx={{ fontSize: 40, color: '#C70039' }} />
@@ -80,7 +81,6 @@ const Authenticscreen = () => {
             </Box>
           </Grid>
 
-      
           <Grid item xs={12} sm={4}>
             <Box display="flex" alignItems="flex-start" gap={2}>
               <SpeedIcon sx={{ fontSize: 40, color: '#C70039' }} />
