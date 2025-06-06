@@ -65,7 +65,7 @@ const MapFormWrapper = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
 }));
-
+//change
 const MapImage = styled('img')({
   width: '100%',
   height: 'auto',
