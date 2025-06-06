@@ -1,27 +1,33 @@
 import { Box, Typography, Card, CardContent, CardMedia } from '@mui/material';
+import mask10 from '../assets/Mask group (10).png';
+import mask11 from '../assets/Mask group (11).png';
+import mask12 from '../assets/Mask group (12).png';
+import mask13 from '../assets/Mask group (13).png';
+
 
 const articles = [
   {
     title: 'How to prepare a delicious gluten free sushi',
     date: 'January 3, 2023',
-    image: '/images/Mask group (10).png',
+    image: mask10,
   },
   {
     title: 'Exclusive baking lessons from the pastry king',
     date: 'January 3, 2023',
-    image: '/images/Mask group (11).png',
+    image: mask11,
   },
   {
     title: 'How to prepare the perfect fries in an air fryer',
     date: 'January 3, 2023',
-    image: '/images/Mask group (12).png',
+    image: mask12,
   },
   {
     title: 'How to prepare delicious chicken tenders',
     date: 'January 3, 2023',
-    image: '/images/Mask group (13).png',
+    image: mask13,
   },
 ];
+
 
 const ReadMoreArticles = () => {
   return (
@@ -33,29 +39,29 @@ const ReadMoreArticles = () => {
         We consider all the drivers of change gives you the components you need to change to create a truly happens.
       </Typography>
 
-      {/* Flex container for horizontal scroll */}
+      
       <Box
   sx={{
     display: 'flex',
     gap: 2,
     justifyContent: 'center',
-    flexWrap: 'nowrap', // no wrapping
+    flexWrap: 'nowrap', 
   }}
 >
   {articles.map((article, index) => (
     <Card
       key={index}
       sx={{
-        flex: '1 1 22%',  // roughly 4 cards in a row with some gap
+        flex: '1 1 22%',  
         borderRadius: 4,
         boxShadow: 3,
         textAlign: 'left',
-        minWidth: 0, // allow shrinking
+        minWidth: 0,
       }}
     >
       <CardMedia
         component="img"
-        height="140" // reduce image height proportionally
+        height="140" 
         image={article.image}
         alt={article.title}
         sx={{ borderTopLeftRadius: 16, borderTopRightRadius: 16 }}

@@ -38,7 +38,7 @@ const Moreabout = () => {
 
   return (
     <Box sx={{ width: '100%', fontFamily: 'sans-serif' }}>
-      {/* Top Contact Bar */}
+     
       <Box
         sx={{
           display: 'flex',
@@ -69,7 +69,6 @@ const Moreabout = () => {
         </Box>
       </Box>
 
-      {/* Header Navigation Bar */}
       <Box
         sx={{
           display: 'flex',
@@ -81,7 +80,7 @@ const Moreabout = () => {
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
         }}
       >
-        {/* Logo */}
+       
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <img src={logo} alt="Logo" style={{ width: 32, height: 32 }} />
           <Typography
@@ -92,7 +91,7 @@ const Moreabout = () => {
           </Typography>
         </Box>
 
-        {/* Nav Menu */}
+   
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Button onClick={handlehome} sx={{ fontSize: 14, color: '#1f2937' }}>Home</Button>
           <Button onClick={handleAbout} sx={{ fontSize: 14, color: '#1f2937' }}>About</Button>
@@ -101,7 +100,7 @@ const Moreabout = () => {
           <Button onClick={handleContact} sx={{ fontSize: 14, color: '#1f2937' }}>Contact</Button>
         </Box>
 
-        {/* Book A Table Button */}
+    
         <Button
           onClick={handleBook}
           sx={{
@@ -120,7 +119,7 @@ const Moreabout = () => {
         </Button>
       </Box>
 
-      {/* Main About Section */}
+     
       <Box sx={{ backgroundColor: '#f9f9f7' }}>
         <Box
           sx={{
@@ -133,7 +132,7 @@ const Moreabout = () => {
             gap: 8,
           }}
         >
-          {/* Left Side Image with Card */}
+         
           <Box sx={{ position: 'relative', width: 460, minWidth: 320 }}>
             <CardMedia
               component="img"
@@ -174,7 +173,6 @@ const Moreabout = () => {
             </Paper>
           </Box>
 
-          {/* Right Side Text */}
           <Box sx={{ flex: 1, minWidth: 320 }}>
             <Typography
               variant="h3"

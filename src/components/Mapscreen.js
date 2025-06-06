@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import logo from '../assets/japanese-food.png';
+import Map from '../assets/map.png';
 import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Box,
   Button,
- 
   Grid,
   MenuItem,
   Select,
@@ -15,48 +16,48 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 
-const StyledTopBar = styled(Box)(({ theme }) => ({
+const StyledTopBar = styled(Box)({
   backgroundColor: '#333',
   color: '#fff',
   padding: '0.5rem 2rem',
   display: 'flex',
   justifyContent: 'space-between',
   fontSize: '0.9rem',
-}));
+});
 
-const StyledNavbar = styled(Toolbar)(({ theme }) => ({
+const StyledNavbar = styled(Toolbar)({
   justifyContent: 'space-between',
   padding: '18px 30px',
   backgroundColor: '#fff',
   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-}));
+});
 
-const LogoBox = styled(Box)(({ theme }) => ({
+const LogoBox = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   gap: '10px',
-}));
+});
 
-const NavLinks = styled(Box)(({ theme }) => ({
+const NavLinks = styled(Box)({
   display: 'flex',
   gap: '1.5rem',
   alignItems: 'center',
-}));
+});
 
-const BookButton = styled(Button)(({ theme }) => ({
+const BookButton = styled(Button)({
   padding: '0.5rem 1rem',
   border: '1px solid #000',
   borderRadius: '20px',
   background: 'none',
-}));
+});
 
-const MainContent = styled(Box)(({ theme }) => ({
+const MainContent = styled(Box)({
   textAlign: 'center',
   padding: '2rem 1rem',
   backgroundColor: '#f9f9f7',
-}));
+});
 
-const MapFormWrapper = styled(Box)(({ theme }) => ({
+const MapFormWrapper = styled(Box)({
   position: 'relative',
   width: '100%',
   marginTop: '12rem',
@@ -64,8 +65,8 @@ const MapFormWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   flexDirection: 'column',
   alignItems: 'center',
-}));
-//change
+});
+
 const MapImage = styled('img')({
   width: '100%',
   height: 'auto',
@@ -73,7 +74,7 @@ const MapImage = styled('img')({
   borderTop: '2px solid #ccc',
 });
 
-const FormCard = styled(Paper)(({ theme }) => ({
+const FormCard = styled(Paper)({
   position: 'absolute',
   top: 0,
   left: '50%',
@@ -85,32 +86,25 @@ const FormCard = styled(Paper)(({ theme }) => ({
   borderRadius: '10px',
   padding: '2rem',
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-}));
+});
 
 const BookTableWithMap = () => {
   const navigate = useNavigate();
-    
-    const handleAbout = () =>{
-      navigate('/about')
+
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [people, setPeople] = useState('1');
+  const [isBooked, setIsBooked] = useState(false);
+
+  const handleBook = () => {
+    if (date && time && name && phone && people) {
+      setIsBooked(true);
+    } else {
+      alert('Please fill in all details before booking.');
     }
-    const handleContact = () =>{
-      navigate('/Contact')
-    }
-    // const handleBlog = () =>{
-    //   navigate('/blog')
-    // }
-    const handleBlogdetails = () =>{
-      navigate('/blogdetails')
-    }
-     const handleourmenupage = () =>{
-      navigate('/ourmenu')
-    }
-     const handleBook= () =>{
-      navigate('/book')
-    }
-     const handlehome = () =>{
-      navigate('/')
-    }
+  };
 
   return (
     <Box sx={{ backgroundColor: '#f9f9f7' }}>
@@ -122,18 +116,18 @@ const BookTableWithMap = () => {
       <AppBar position="static" elevation={0} sx={{ backgroundColor: '#fff' }}>
         <StyledNavbar>
           <LogoBox>
-            <img src="/japanese-food.png" alt="Logo" width="32" height="32" />
+            <img src={logo} alt="Logo" height="32" />
             <Typography variant="h6" sx={{ fontStyle: 'italic', fontWeight: 600, color: '#1f2937' }}>
               Bistro Bliss
             </Typography>
           </LogoBox>
 
           <NavLinks>
-            <Button  onClick={handlehome}color="inherit" sx={{ color: '#555' }}>Home</Button>
-            <Button onClick={handleAbout} sx={{ color: '#5f6653', fontWeight: 600 }}>About</Button>
-            <Button onClick={handleourmenupage} color="inherit" sx={{ color: '#555' }}>Menu</Button>
-            <Button onClick={handleBlogdetails} color="inherit" sx={{ color: '#555' }}>Pages</Button>
-            <Button  onclick={handleContact} color="inherit" sx={{ color: '#555' }}>Contact</Button>
+            <Button onClick={() => navigate('/')} sx={{ color: '#555' }}>Home</Button>
+            <Button onClick={() => navigate('/about')} sx={{ color: '#5f6653', fontWeight: 600 }}>About</Button>
+            <Button onClick={() => navigate('/ourmenu')} sx={{ color: '#555' }}>Menu</Button>
+            <Button onClick={() => navigate('/blogdetails')} sx={{ color: '#555' }}>Pages</Button>
+            <Button onClick={() => navigate('/Contact')} sx={{ color: '#555' }}>Contact</Button>
           </NavLinks>
 
           <BookButton variant="outlined">Book A Table</BookButton>
@@ -149,33 +143,50 @@ const BookTableWithMap = () => {
 
         <MapFormWrapper>
           <Box sx={{ width: '100%' }}>
-            <MapImage src="/images/map.png" alt="Map" />
+            <MapImage src={Map} alt="mapimage" />
           </Box>
 
           <FormCard>
-           <Box component="form" sx={{ width: '100%' }}>
+            <Box component="form" sx={{ width: '100%' }}>
+              {isBooked && (
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: '#2e7d32',
+                    mb: 2,
+                    fontWeight: 'bold',
+                    background: '#e8f5e9',
+                    px: 2,
+                    py: 1,
+                    borderRadius: '8px',
+                    textAlign: 'center',
+                  }}
+                >
+                  ✅ Table Booked Successfully!
+                </Typography>
+              )}
 
               <Grid container spacing={2} sx={{ mb: 2 }}>
                 <Grid item xs={6}>
-                  <TextField fullWidth type="date" variant="outlined" />
+                  <TextField fullWidth type="date" variant="outlined" value={date} onChange={(e) => setDate(e.target.value)} />
                 </Grid>
                 <Grid item xs={6}>
-                  <TextField fullWidth type="time" variant="outlined" />
+                  <TextField fullWidth type="time" variant="outlined" value={time} onChange={(e) => setTime(e.target.value)} />
                 </Grid>
               </Grid>
 
               <Grid container spacing={2} sx={{ mb: 2 }}>
                 <Grid item xs={6}>
-                  <TextField fullWidth placeholder="Enter your name" variant="outlined" />
+                  <TextField fullWidth placeholder="Enter your name" variant="outlined" value={name} onChange={(e) => setName(e.target.value)} />
                 </Grid>
                 <Grid item xs={6}>
-                  <TextField fullWidth placeholder="x-xxx-xxx-xxxx" type="tel" variant="outlined" />
+                  <TextField fullWidth placeholder="x-xxx-xxx-xxxx" type="tel" variant="outlined" value={phone} onChange={(e) => setPhone(e.target.value)} />
                 </Grid>
               </Grid>
 
               <Grid container spacing={2} sx={{ mb: 2 }}>
                 <Grid item xs={12}>
-                  <Select fullWidth defaultValue="1">
+                  <Select fullWidth value={people} onChange={(e) => setPeople(e.target.value)}>
                     <MenuItem value="1">1 Person</MenuItem>
                     <MenuItem value="2">2 People</MenuItem>
                     <MenuItem value="3">3 People</MenuItem>
@@ -184,7 +195,8 @@ const BookTableWithMap = () => {
                 </Grid>
               </Grid>
 
-              <Button onClick={handleBook}
+              <Button
+                onClick={handleBook}
                 fullWidth
                 variant="contained"
                 sx={{

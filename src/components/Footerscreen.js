@@ -12,7 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-// ✅ Import images from assets
+
 import LogoImg from '../assets/japanese-food.png';
 import Img1 from '../assets/img1.png';
 import Img2 from '../assets/img2.png';

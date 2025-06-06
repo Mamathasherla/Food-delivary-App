@@ -22,15 +22,18 @@ import {
   Instagram as InstagramIcon,
 } from "@mui/icons-material";
 
+import maskGroup from '../assets/Mask group (9).png';
+import saladFries from '../assets/pexels-suzy-hazelwood-2966196 1.png';
+import logo from '../assets/japanese-food.png';
+
+
 const Long = () => {
   const navigate = useNavigate();
 
-  // Navigation Handlers
   const handleNavigation = (path) => navigate(path);
 
   return (
     <Box>
-      {/* Top Bar */}
       <AppBar position="static" color="default" sx={{ py: 1, backgroundColor: "#f5f5f5" }}>
         <Container maxWidth="lg">
           <Grid container justifyContent="space-between" alignItems="center">
@@ -61,17 +64,14 @@ const Long = () => {
         </Container>
       </AppBar>
 
-      {/* Main Navbar */}
       <AppBar position="static" color="transparent" elevation={0}>
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-            {/* Logo */}
             <Box display="flex" alignItems="center" gap={1}>
-              <img src="/japanese-food.png" alt="Logo" height="40" />
+              <img src={logo} alt="Logo" height="40" />
               <Typography variant="h6" component="div">Bistro Bliss</Typography>
             </Box>
 
-            {/* Navigation Links */}
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button onClick={() => handleNavigation('/')} sx={{ fontSize: 14, color: '#1f2937' }}>Home</Button>
               <Button onClick={() => handleNavigation('/about')} sx={{ fontSize: 14, color: '#1f2937' }}>About</Button>
@@ -80,7 +80,6 @@ const Long = () => {
               <Button onClick={() => handleNavigation('/contact')} sx={{ fontSize: 14, color: '#1f2937' }}>Contact</Button>
             </Box>
 
-            {/* Book Button */}
             <Button
               onClick={() => handleNavigation('/book')}
               sx={{
@@ -101,15 +100,14 @@ const Long = () => {
         </Container>
       </AppBar>
 
-      {/* Content */}
       <Container maxWidth="md" sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom fontWeight="bold" textAlign="center">
           The secret tips & tricks to prepare a perfect burger & pizza for our customers
         </Typography>
 
-        <Box component="img" src="/images/Mask group (9).png" alt="Noodles and greens" width="100%" my={4} />
+     
+        <Box component="img" src={maskGroup} alt="Noodles and greens" width="100%" my={4} />
 
-        {/* Section 1 */}
         <Box my={4}>
           <Typography variant="h5" gutterBottom>
             What do you need to prepare a home-made burger?
@@ -135,7 +133,6 @@ const Long = () => {
           </List>
         </Box>
 
-        {/* Section 2 */}
         <Box my={4}>
           <Typography variant="h5" gutterBottom>
             What are the right ingredients to make it delicious?
@@ -161,9 +158,9 @@ const Long = () => {
           </List>
         </Box>
 
-        <Box component="img" src="/images/pexels-suzy-hazelwood-2966196 1.png" alt="Salad and fries" width="100%" my={4} />
 
-        {/* Section 3 */}
+        <Box component="img" src={saladFries} alt="Salad and fries" width="100%" my={4} />
+
         <Box my={4}>
           <Typography variant="h5" gutterBottom>
             Final Thoughts

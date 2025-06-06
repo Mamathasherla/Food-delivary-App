@@ -22,7 +22,7 @@ const Little = () => {
         gap: 6,
       }}
     >
-      {/* Left Side Text */}
+    
       <Box sx={{ flex: 1 }}>
         <Typography
           variant="h4"
@@ -53,7 +53,7 @@ const Little = () => {
           strives to make every visit an unforgettable event.
         </Typography>
 
-        {/* Stats Grid */}
+    
         <Box
           sx={{
             display: 'grid',
@@ -88,7 +88,7 @@ const Little = () => {
         </Box>
       </Box>
 
-      {/* Right Side Image */}
+   
       <Box
         component="img"
         src={aboutchef}
